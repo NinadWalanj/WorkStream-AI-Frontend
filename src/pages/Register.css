@@ -1,0 +1,45 @@
+/* Register.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0e0e0e;
+  color: #f4f4f4;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.register-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background-color: #1a1a1a;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px #333;
+  text-align: center;
+}
+
+.login-button {
+  background-color: #333;
+  color: #f4f4f4;
+  border: 1px solid #444;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.login-button:hover {
+  background-color: #444;
+}
+
+.github-icon {
+  margin-right: 8px;
+  vertical-align: middle;
+}
