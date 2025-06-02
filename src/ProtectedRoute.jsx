@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./spinner.css";
+const apiBackendUrl = import.meta.env.VITE_API_BACKEND_URL;
 
 const ProtectedRoute = ({ children }) => {
   const [loading, setLoading] = useState(true);
@@ -10,7 +11,7 @@ const ProtectedRoute = ({ children }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/me", { withCredentials: true })
+      .get(`${apiBackendUrl}/auth/me`, { withCredentials: true })
       .then(() => setLoading(false))
       .catch(() => {
         navigate("/register");

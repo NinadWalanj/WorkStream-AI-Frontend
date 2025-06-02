@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Home.css";
-const backendUrl = import.meta.env.VITE_BACKEND_URL;
+const apiBackendUrl = import.meta.env.VITE_API_BACKEND_URL;
 
 const Home = () => {
   const [user, setUser] = useState("");
@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     // Fetch repos
     axios
-      .get(`${backendUrl}/repos`, {
+      .get(`${apiBackendUrl}/repos`, {
         withCredentials: true, // ✅ CRITICAL!
       })
       .then((res) => {
@@ -26,7 +26,7 @@ const Home = () => {
 
     // Fetch user info
     axios
-      .get(`${backendUrl}/auth/me`, {
+      .get(`${apiBackendUrl}/auth/me`, {
         withCredentials: true, // ✅ CRITICAL!
       })
       .then((res) => {
@@ -42,7 +42,7 @@ const Home = () => {
     const [owner, repoName] = selectedRepo.split("/");
     axios
       .post(
-        `${backendUrl}/repos/select`,
+        `${apiBackendUrl}/repos/select`,
         { repoName, owner },
         {
           withCredentials: true, // ✅ CRITICAL!
@@ -54,7 +54,7 @@ const Home = () => {
 
   const handleGenerateSummary = () => {
     axios
-      .get(`${backendUrl}/summary`, {
+      .get(`${apiBackendUrl}/summary`, {
         withCredentials: true, // ✅ CRITICAL!
       })
       .then((res) => setSummary(res.data.summary))
@@ -62,7 +62,7 @@ const Home = () => {
   };
 
   const handleLogout = () => {
-    window.location.href = `${backendUrl}/auth/logout`;
+    window.location.href = `${apiBackendUrl}/auth/logout`;
   };
 
   return (

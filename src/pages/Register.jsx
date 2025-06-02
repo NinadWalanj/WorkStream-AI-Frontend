@@ -1,10 +1,10 @@
 import React from "react";
 import "./Register.css";
-const backendUrl = import.meta.env.VITE_BACKEND_URL;
+const apiBackendUrl = import.meta.env.VITE_API_BACKEND_URL;
 
 const Register = () => {
   const handleGitHubLogin = () => {
-    window.location.href = `${backendUrl}/auth/github`;
+    window.location.href = `${apiBackendUrl}/auth/github`;
   };
 
   return (
