@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import ProtectedRoute from "./ProtectedRoute";
-
+import Callback from "./Callback";
 function App() {
   return (
     <Router>
