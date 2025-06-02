@@ -5,6 +5,8 @@ import axios from "axios";
 import "./spinner.css";
 const apiBackendUrl = import.meta.env.VITE_API_BACKEND_URL;
 
+// console.log("Backend URL: ROUTE", apiBackendUrl);
+
 const ProtectedRoute = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
