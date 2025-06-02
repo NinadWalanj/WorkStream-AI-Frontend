@@ -8,6 +8,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/register" element={<Register />} />
+        <Route path="/auth/github/callback" element={<Callback />} />
         <Route
           path="/"
           element={
